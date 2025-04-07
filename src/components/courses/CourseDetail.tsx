@@ -38,15 +38,26 @@ interface SectionType {
   }[];
 }
 
-interface CourseDetailProps extends CourseProps {
+// Instead of extending CourseProps, we'll define a new interface
+interface CourseDetailProps {
+  id: string;
+  title: string;
+  image: string;
+  instructor: InstructorType;
+  rating: number;
+  reviewCount: number;
+  price: number;
+  originalPrice?: number;
+  duration: string;
+  isPremium: boolean;
   description: string;
   longDescription: string;
   requirements: string[];
   targetAudience: string[];
   whatYouWillLearn: string[];
   lastUpdated: string;
-  instructor: InstructorType;
   sections: SectionType[];
+  className?: string;
 }
 
 const CourseDetail = ({ 
